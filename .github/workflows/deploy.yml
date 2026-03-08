@@ -28,6 +28,9 @@ jobs:
         run: npm ci
       - name: Build Quartz
         run: npx quartz build
+      - name: Encrypt HTML files
+        run: |
+          npx staticrypt public/**/*.html -p admin --directory public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
