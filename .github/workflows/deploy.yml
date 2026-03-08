@@ -30,7 +30,7 @@ jobs:
         run: npx quartz build
       - name: Encrypt HTML files
         run: |
-          find public -name "*.html" -exec npx staticrypt {} -p admin --short --remember 30 --directory public ';'
+          npx staticrypt public/index.html -p admin --directory public --short
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
