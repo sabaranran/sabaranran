@@ -30,7 +30,7 @@ jobs:
         run: npx quartz build
       - name: Encrypt HTML files
         run: |
-          npx staticrypt public/**/*.html -p admin --directory public
+          npx staticrypt public/**/*.html -p admin --directory public --short
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
